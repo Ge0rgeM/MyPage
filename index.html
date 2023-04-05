@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .navDiv{
+        width: 100%;
+        height: 100vh;
+        background: gray;
+        position: relative;
+    }
+    nav{
+        display: flex;
+        width: 85%;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0 0 0;
+    }
+    .buttons{
+        display:flex;
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    .buttons>div{
+        padding: 20px 50px;
+        position: relative;
+        transition: transform 0.4s;
+    }
+    .buttons>div>a,.buttons>div>span>a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    .buttons>div>span>a{
+        color: #6f00ff;
+    }
+    .buttons>div>span{
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        padding: 20px 50px;
+        left: 0%;
+        top: 100%;
+        margin: -5px 0 0 0 ;
+        border-bottom: 5px solid #6f00ff;
+        display: flex;
+        align-items: center;
+    }
+    .buttons>div:hover{
+        transform: translateY(-100%);
+    }
+</style>
+<body>
+    <div class="navDiv">
+        <nav>
+            <img src="#" alt="MyLogo" class="logo">
+            <div class="buttons">
+                <div>
+                    <a href="#" id="HOME">HOME</a>
+                    <span>
+                        <a href="#" id="HOME">HOME</a>
+                    </span>
+                </div>
+                <div>
+                    <a href="" id="ABOUT">ABOUT</a>
+                    <span>
+                        <a href="" id="ABOUT">ABOUT</a>
+                    </span>
+                </div>
+                <div>
+                    <a href="" id="PORTFOLIO">PORTFOLIO</a>
+                    <span>
+                        <a href="" id="PORTFOLIO">PORTFOLIO</a>
+                    </span>
+                </div>
+                <div>
+                    <a href="" id="CONTACT_ME">CONTACT ME</a>
+                    <span>
+                        <a href="" id="CONTACT_ME">CONTACT ME</a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
