@@ -8,14 +8,14 @@
 </head>
 <style>
     *{
-        margin: 0;
+        margin: 0 10px 0 10px;
         padding: 0;
     }
     .navDiv{
         width: 100%;
         height: fit-content;
         background: white;
-        
+        position: fixed;
     }
     nav{
         display: flex;
@@ -24,6 +24,9 @@
         align-items: center;
         justify-content: space-between;
         padding: 20px 0 0 0;
+    }
+    .navDiv>nav>img{
+        width: 220px;
     }
     .buttons{
         display:flex;
@@ -72,11 +75,21 @@
         width: 100%;
         height: 700px;
     }
+    .frontTextIntro>h1{
+        margin-bottom: 20px;
+    }
+    .frontTextIntro>a{
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: gray;
+        border-radius: 5px;
+        color: white;
+    }
 </style>
 <body>
     <div class="navDiv">
         <nav>
-            <img src="#" alt="MyLogo" class="logo">
+            <img src="/GM.png" alt="MyLogo" class="logo">
             <div class="buttons">
                 <div>
                     <a href="#" id="HOME">HOME</a>
@@ -108,7 +121,7 @@
     <div id="temp"></div>
     <div class="frontTextIntro">
         <h1>Hello, I'm <span>George</span></h1>
-        <a href="Https://drive.google.com/uc?export=download&id=1-D4yABlLAnPkPD-Fi-oqzxvDY9xtXITl" download>Download CV</a>
+        <a href="Https://drive.google.com/uc?export=download&id=1-D4yABlLAnPkPD-Fi-oqzxvDY9xtXITl">Download CV</a>
     </div>
     <div class="portfolioDiv">
         <div class="sectorName">
