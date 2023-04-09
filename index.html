@@ -14,8 +14,8 @@
     .navDiv{
         width: 100%;
         height: fit-content;
-        background: white;
         position: fixed;
+        z-index: 100;
     }
     nav{
         display: flex;
@@ -36,12 +36,13 @@
         width: 60%;
         box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        background-color: white;
     }
     .buttons>div{
         font-size: 110%;
         padding: 20px 50px;
         position: relative;
-        transition: transform 0.4s;
+        transition: transform 0.3s;
     }
     .buttons>div>a,.buttons>div>span>a{
         text-decoration: none;
@@ -75,21 +76,56 @@
         width: 100%;
         height: 700px;
     }
-    .frontTextIntro>h1{
+    .frontTextIntro{
+        padding-top: 650px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 15%;
+    }
+    .intro{
+        position: relative;
+        top: -13em;
+        width: 50%;
+    }
+    .frontTextIntro>.intro>h1{
         margin-bottom: 20px;
     }
-    .frontTextIntro>a{
+    .frontTextIntro>.intro>a{
         text-decoration: none;
         padding: 10px 20px;
-        background-color: gray;
+        background-color: #121212;
         border-radius: 5px;
         color: white;
     }
+    .frontTextIntro>.intro>a:hover{
+        background-color: #201f1f;
+    }
+    .images{
+        width: 34%;
+        height: fit-content;
+        position: relative;
+        float: right;
+        right: 100px;
+    }
+    .images>img{
+        position: absolute;
+        width: 80%;
+        bottom: 0;
+    }
+    /* .images>.shape{
+        width: 45%;
+    }
+    .images>.me{
+        position: relative;
+        width: 15%;
+        bottom: 0;
+    } */
+    /* float: right; */
 </style>
 <body>
     <div class="navDiv">
         <nav>
-            <img src="/GM.png" alt="MyLogo" class="logo">
+            <img src="./GM.png" alt="MyLogo" class="logo">
             <div class="buttons">
                 <div>
                     <a href="#" id="HOME">HOME</a>
@@ -118,10 +154,15 @@
             </div>
         </nav>
     </div>
-    <div id="temp"></div>
     <div class="frontTextIntro">
-        <h1>Hello, I'm <span>George</span></h1>
-        <a href="Https://drive.google.com/uc?export=download&id=1-D4yABlLAnPkPD-Fi-oqzxvDY9xtXITl">Download CV</a>
+        <div class="intro">
+            <h1>Hello, I'm <span>George</span></h1>
+            <a href="Https://drive.google.com/uc?export=download&id=1-D4yABlLAnPkPD-Fi-oqzxvDY9xtXITl">Download CV</a>
+        </div>
+        <div class="images">
+            <img src="./shape.png" alt="" class="shape">
+            <img src="./PhotoMe.png" alt="" class="me">
+        </div>
     </div>
     <div class="portfolioDiv">
         <div class="sectorName">
@@ -130,5 +171,6 @@
             </h1>
         </div>
     </div>
+    <div id="temp"></div>
 </body>
 </html>
