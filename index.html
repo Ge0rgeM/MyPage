@@ -26,7 +26,7 @@
         padding: 20px 0 0 0;
     }
     .navDiv>nav>img{
-        width: 220px;
+        width: 20%;
     }
     .buttons{
         display:flex;
@@ -39,8 +39,9 @@
         background-color: white;
     }
     .buttons>div{
-        font-size: 110%;
-        padding: 20px 50px;
+        font-size: 30px;
+        padding: 20px 10px;
+        width: fit-content;
         position: relative;
         transition: transform 0.3s;
     }
@@ -48,19 +49,20 @@
         text-decoration: none;
         color: black;
         font-weight: bold;
+        white-space: nowrap;
     }
     .buttons>div>span>a{
         color: #6f00ff;
     }
     .buttons>div>span{
+        padding: 20px 10px;
         position: absolute;
         width: fit-content;
         height: fit-content;
-        padding: 20px 50px;
         left: 0%;
         top: 100%;
-        margin: -5px 0 0 0 ;
-        border-bottom: 5px solid #6f00ff;
+        margin: -0.2em 0 0 0 ;
+        border-bottom: 0.2em solid #6f00ff;
         display: flex;
         align-items: center;
     }
@@ -88,7 +90,7 @@
         width: 50%;
     }
     .frontTextIntro>.intro>h1{
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .frontTextIntro>.intro>a{
         text-decoration: none;
@@ -111,16 +113,26 @@
         position: absolute;
         width: 80%;
         bottom: 0;
+        transition: transform 0.5s;
     }
-    /* .images>.shape{
-        width: 45%;
+    .images>.shape{
+        left: -10px;
     }
     .images>.me{
-        position: relative;
-        width: 15%;
-        bottom: 0;
-    } */
-    /* float: right; */
+        width: 75%;
+        bottom: -10px;
+    }
+    .images:hover .shape{
+        transform: translateY(-5%);
+    }
+    .images:hover .me{
+        transform: translateX(4%);
+    }
+    .littleDesc{
+        width: 60%;
+        height: fit-content;
+        padding-bottom: 20px;
+    }
 </style>
 <body>
     <div class="navDiv">
@@ -157,6 +169,9 @@
     <div class="frontTextIntro">
         <div class="intro">
             <h1>Hello, I'm <span>George</span></h1>
+            <div class="littleDesc">
+                <p class="desc">This is my official portfolio website to show <br> all details and project i have already made.</p>
+            </div>
             <a href="Https://drive.google.com/uc?export=download&id=1-D4yABlLAnPkPD-Fi-oqzxvDY9xtXITl">Download CV</a>
         </div>
         <div class="images">
@@ -174,3 +189,22 @@
     <div id="temp"></div>
 </body>
 </html>
+<script>
+    const resize_ob = new ResizeObserver(function(entries) {
+        // since we are observing only a single element, so we access the first element in entries array
+        let rect = entries[0].contentRect;
+
+        // current width & height
+        let width = rect.width;
+        let height = rect.height;
+
+        console.log('Current Width : ' + width);
+        console.log('Current Height : ' + height);
+        //write font code to change accordingly
+        let divFont = document.getElementsByClassName("buttons")[0].children;
+        for(let i=0;i<divFont.length;i++)
+            divFont[i].style.fontSize = (width/4*10)/100+"px";
+        console.log(divFont);
+    });
+    resize_ob.observe(document.getElementsByClassName("buttons")[0]);
+</script>
