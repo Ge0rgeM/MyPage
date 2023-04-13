@@ -15,6 +15,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 20px 0 0 0;
+    background-color: white;
 }
 .navDiv>nav>img{
     width: 20%;
@@ -131,21 +132,27 @@ nav{
 }
 #portfolioDivs{
     width: 100%;
-    height: fit-content;
     display: flex;
     flex-wrap: wrap;    
     justify-content: center;
 }
 #portfolioDivs>div{
-    width: fit-content;
+    max-width: 600px;
+    max-height: 300px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: ;
     /* flex: 0 0 33%; */
     margin-top: 10px;
     margin-bottom: 10px;
+    border:5px solid black;
+    border-radius: 5px;
+    background-color: green;
+    cursor: pointer;
+    transition: transform 1s;
 }
-#portfolioDivs>div>a>img{
-    width: 60%;
+#portfolioDivs>div:hover{   
+    transform: scale(1.07);
+}
+#portfolioDivs>div>img{
+    width: 100%;
 }
