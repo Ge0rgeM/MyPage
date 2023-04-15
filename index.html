@@ -73,6 +73,7 @@
             </div>
         </div>
     </div>
+    <?php phpinfo(); ?>
     <div class="formDiv">
         <div class="sectorName">
             <h1 class="ContactMe">
@@ -80,26 +81,27 @@
             </h1>
         </div>
         <form>
-            <!-- <h2>Register</h2> -->
+            <h2>Contact Me</h2>
             <div class="form-group">
-              <label for="username">Username:</label>
-              <input type="text" id="username" name="username" required>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" required>
+              <label for="subject">Subject:</label>
+              <input type="text" id="subject" name="subject" required>
             </div>
             <div class="form-group">
-              <label for="confirm-password">Confirm Password:</label>
-              <input type="password" id="confirm-password" name="confirm-password" required>
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <input type="submit" value="Register">
-          </form>          
+            <input type="submit" value="Send Message">
+        </form>                   
     </div>
+    <div id="temp"></div>
 </body>
 </html>
 <script src="indexJS.js"></script>
