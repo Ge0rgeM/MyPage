@@ -79,8 +79,8 @@ nav{
     height: 1700px;
 }
 .frontTextIntro{
-    padding-top: 650px;
     display: flex;
+    align-items: start;
     justify-content: space-between;
     padding-left: 15%;
 }
@@ -90,7 +90,14 @@ nav{
     width: 50%;
 }
 .frontTextIntro>.intro>h1{
+    font-size: 2vw;
     margin-bottom: 10px;
+}
+.littleDesc{
+    font-size: 1.3vw;
+    width: 60%;
+    height: fit-content;
+    padding-bottom: 20px;
 }
 .frontTextIntro>.intro>a{
     text-decoration: none;
@@ -128,11 +135,6 @@ nav{
 .images:hover .me{
     transform: translateX(4%);
 }
-.littleDesc{
-    width: 60%;
-    height: fit-content;
-    padding-bottom: 20px;
-}
 #portfolioDivs{
     width: 100%;
     display: flex;
@@ -163,71 +165,94 @@ nav{
     width: 100%;
 }
 /* For SMOOTH scrolling */
-.frontTextIntro,.sectorName,#portfolioDivs>div{
+.frontTextIntro,.sectorName,#portfolioDivs>div,.formDiv>form{
     transition: opacity 1s ease, transform 1.5s ease;
 }
 /* For SMOOTH scrolling */
 
 
-  /* ///////////////////////////////////// */
-.formDiv{    
-    margin-top: 50px;
-}
-
-form {
-    width: 400px;
+  /* FORM */
+.formDiv>form{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 10px;
+    width: fit-content;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
     margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(#e7eaff, #a4b1fc, #233ef4);
     border-radius: 5px;
-    padding: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
+}
+.formDiv>form>h2{
+    font-size: 3vw;
+    padding-top: 10px;
     font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    display: block;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #f5f5f5;
-    font-size: 16px;
-    width: 100%;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+    color: #8395c5;
+}
+.firstForm{
     margin-top: 20px;
-    transition: background-color 0.2s ease;
-  }
+}
+.firstForm>.first,.firstForm>.second{
+    width: fit-content;
+    display: flex;
+}
+.form-group{
+    margin: 0;
+}
+.form-group>input{
+    width: 80%;
+}
+.secondForm{
+    width: 100%;
+}
+.secondForm>.tempDiv{
+    width: 90%;
+    margin: auto;
+}
+.form-group>textarea{
+    width: 90%;
+}
+.firstForm>.first>.form-group>input{
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e7eaff;   
+}
+.firstForm>.second>.form-group>input{
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:  #c7cdfd;
+}
+.secondForm>.tempDiv>.form-group>textarea{
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    resize: vertical;
+    background-color: #a4b1fc;
+}
+.formDiv>form>input{
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #233ef4;
+    color: black;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: all 1s;
+}
+.formDiv>form>input:hover{
+    color: white;
+}
+input:focus,textarea:focus{
+    outline-offset: 2px;
+    outline-style: dashed;
+    outline-color: #233ef4;
+}
   
-  input[type="submit"]:hover {
-    background-color: #0062cc;
-  }
-  
+/* FORM */
