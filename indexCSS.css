@@ -1,16 +1,72 @@
 html{
     scroll-behavior: smooth;
 }
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track styles */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* Handle styles */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+  
+  /* Handle hover styles */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Floating scrollbar styles */
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    box-shadow: inset 0 0 0 3px #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Floating scrollbar styles on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 0 3px #555;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track styles */
+  ::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
+  /* Handle styles */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+  
+  /* Handle hover styles */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
 *{
     margin: 0 10px 0 10px;
     padding: 0;
 }
 .navDiv{
     width: 100%;
+    margin: auto;
     height: fit-content;
     position: fixed;
     z-index: 100;
     background-color: white;
+    overflow: hidden;
 }
 nav{
     display: flex;
@@ -79,17 +135,60 @@ nav{
     height: 1700px;
 }
 .frontTextIntro{
+    margin: auto;
+    width: 95%;
+    padding-top: 200px;
+    /* margin-top: 200px; */
+    background-color: transparent;
+    display: flex;
+}
+.intro{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imagesDiv{
+    width: 50%;
+    height: 25vw;
+    display: flex;
+    justify-content: center;
+}
+.shapeDiv{
+    width: 25vw;
+    height: 25vw;
+    position: absolute;
+    background-color: black;
+    background-color: transparent;
+    background-image: url('./shape.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.myPhotoDiv{
+    width: 25vw;
+    height: 25vw;
+    position: absolute;
+    z-index: 10;
+    background-color: black;
+    background-color: transparent;
+    background-image: url('./PhotoMe.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* .frontTextIntro{
+    height: 600px;
     display: flex;
     align-items: start;
     justify-content: space-between;
     padding-left: 15%;
-}
-.intro{
+} */
+/* .intro{
     position: relative;
     top: -13em;
     width: 50%;
-}
-.frontTextIntro>.intro>h1{
+} */
+/* .frontTextIntro>.intro>h1{
     font-size: 2vw;
     margin-bottom: 10px;
 }
@@ -105,7 +204,7 @@ nav{
     background-color: #121212;
     border-radius: 5px;
     color: white;
-}
+} */
 .frontTextIntro>.intro>a:hover{
     background-color: #201f1f;
 }
@@ -176,6 +275,7 @@ nav{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 10px;
     width: fit-content;
     height: 450px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -255,4 +355,4 @@ input:focus,textarea:focus{
     outline-color: #233ef4;
 }
   
-/* FORM */
+/* FORM */  

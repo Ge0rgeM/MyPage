@@ -32,16 +32,16 @@ const resize_ob = new ResizeObserver(function(entries) {
     divToResize.style.paddingTop = 4.5*height + "px";
     // console.log(divFont);
 });
-resize_ob.observe(document.getElementsByClassName("navDiv")[0]);
+// resize_ob.observe(document.getElementsByClassName("navDiv")[0]);
+
 
 const target = [];
-target.push(document.getElementsByClassName("frontTextIntro")[0]);
+// target.push(document.getElementsByClassName("frontTextIntro")[0]);
 // target.push(document.getElementById("portfolioDivs"));
 target.push(document.getElementsByClassName("portfolioDiv")[0].children[0]);
 target.push(...document.getElementsByClassName("portfolioDiv")[0].children[1].children);
 target.push(document.querySelectorAll(".formDiv>form")[0]);
 // const items = document.querySelectorAll('.item');
-
 function checkViewport() {
     target.forEach(item => {
         const itemPosition = item.getBoundingClientRect();
