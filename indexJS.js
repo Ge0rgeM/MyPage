@@ -106,3 +106,32 @@ function projectClick() {
         });
     }
 }
+
+// const form = document.querySelectorAll('form')[0];
+
+// // Add an event listener for form submission
+// form.addEventListener('submit', e => {
+//   // Prevent the default form submission behavior
+//   e.preventDefault();
+
+//   // Get the form data
+//   const formData = new FormData(form);
+
+//   // Send the form data to an email address using a third-party service
+//   fetch('https://formsubmit.co/ajax/your-email-address-here', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify(Object.fromEntries(formData)),
+//   })
+//   .then(response => {
+//     // Handle the response from the server
+//     console.log(response);
+//     alert('Your message has been sent!');
+//     form.reset();
+//   })
+//   .catch(error => {
+//     // Handle any errors that occur during the request
+//     console.error(error);
+//     alert('An error occurred while sending your message.');
+//   });
+// });
