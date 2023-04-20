@@ -41,6 +41,8 @@ const target = [];
 target.push(document.getElementsByClassName("portfolioDiv")[0].children[0]);
 target.push(...document.getElementsByClassName("portfolioDiv")[0].children[1].children);
 target.push(document.querySelectorAll(".formDiv>form")[0]);
+target.push(document.querySelectorAll(".about-section h2")[0]);
+target.push(...document.getElementsByClassName("topics")[0].children);
 // const items = document.querySelectorAll('.item');
 function checkViewport() {
     target.forEach(item => {
@@ -133,4 +135,24 @@ form.addEventListener('submit', e => {
     console.error(error);
     alert('An error occurred while sending your message.');
   });
+});
+
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.querySelector(".menu");
+
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("open");
+});
+
+
+
+let shape = document.getElementsByClassName("shapeDiv")[0];
+let me = document.getElementsByClassName("myPhotoDiv")[0];
+me.addEventListener("mouseover", function() {
+    this.style.transform = "translateX(4%)";
+    shape.style.transform = "translateY(-4.5%)";
+});
+me.addEventListener("mouseout", function() {
+    this.style.transform = "translateX(-4%)";
+    shape.style.transform = "translateY(4.5%)";
 });

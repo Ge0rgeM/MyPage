@@ -68,6 +68,10 @@ html{
     background-color: white;
     overflow: hidden;
 }
+.navDiv>img,.navDiv>.menu-btn,.navDiv>.menu{
+    display: none;
+    position: absolute;
+}
 nav{
     display: flex;
     width: 85%;
@@ -149,11 +153,60 @@ nav{
     justify-content: center;
     align-items: center;
 }
+.introDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.intro h1{
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+.littleDesc{
+    font-size: 1.6vw;
+    line-height: 1.3;
+}
+.frontTextIntro>.intro>a{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #121212;
+    border-radius: 5px;
+    color: white;
+}
+    /* .frontTextIntro{
+    height: 600px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding-left: 15%;
+} */
+/* .intro{
+    position: relative;
+    top: -13em;
+    width: 50%;
+} */
+/* .frontTextIntro>.intro>h1{
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+} 
+*/
+.frontTextIntro>.intro>a:hover{
+    background-color: #201f1f;
+}
 .imagesDiv{
     width: 50%;
     height: 25vw;
     display: flex;
     justify-content: center;
+}
+.imagesDiv div{
+    transition: transform 0.5s;
 }
 .shapeDiv{
     width: 25vw;
@@ -175,64 +228,6 @@ nav{
     background-image: url('./PhotoMe.png');
     background-repeat: no-repeat;
     background-size: contain;
-}
-/* .frontTextIntro{
-    height: 600px;
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    padding-left: 15%;
-} */
-/* .intro{
-    position: relative;
-    top: -13em;
-    width: 50%;
-} */
-/* .frontTextIntro>.intro>h1{
-    font-size: 2vw;
-    margin-bottom: 10px;
-}
-.littleDesc{
-    font-size: 1.3vw;
-    width: 60%;
-    height: fit-content;
-    padding-bottom: 20px;
-}
-.frontTextIntro>.intro>a{
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: #121212;
-    border-radius: 5px;
-    color: white;
-} */
-.frontTextIntro>.intro>a:hover{
-    background-color: #201f1f;
-}
-.images{
-    width: 34%;
-    height: fit-content;
-    position: relative;
-    float: right;
-    right: 100px;
-}
-.images>img{
-    position: absolute;
-    width: 80%;
-    bottom: 0;
-    transition: transform 0.5s;
-}
-.images>.shape{
-    left: -10px;
-}
-.images>.me{
-    width: 75%;
-    bottom: -10px;
-}
-.images:hover .shape{
-    transform: translateY(-5%);
-}
-.images:hover .me{
-    transform: translateX(4%);
 }
 #portfolioDivs{
     width: 100%;
@@ -264,7 +259,8 @@ nav{
     width: 100%;
 }
 /* For SMOOTH scrolling */
-.frontTextIntro,.sectorName,#portfolioDivs>div,.formDiv>form{
+.frontTextIntro,.sectorName,#portfolioDivs>div,
+.formDiv>form,.about-section *{
     transition: opacity 1s ease, transform 1.5s ease;
 }
 /* For SMOOTH scrolling */
@@ -356,3 +352,174 @@ input:focus,textarea:focus{
 }
   
 /* FORM */  
+.menuDiv{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.menuDiv>.menuLine{
+    width: 50%;
+    height: 1px;
+    border-bottom: black 5px solid;
+    z-index: 100;
+}
+.menuDiv>.menuLine:nth-child(1){
+    margin-bottom: 10px;
+}
+.menuDiv>.menuLine:nth-child(3){
+    margin-top: 10px;
+}
+/* ///////////////////// */
+
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 999;
+    cursor: pointer;
+  }
+  
+  .menu-btn span {
+    width: 30px;
+    height: 3px;
+    margin: 3px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu-btn.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-btn.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .menu {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 998;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 0;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .menu a:hover {
+    background-color: #eee;
+  }
+  
+  .menu-btn.open ~ .menu {
+    right: 0;
+  }
+  
+  /* ////////////////////////////// */
+  .aboutDiv{
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  .about-section {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-section h2{
+        font-size: 3.5vw;
+    }
+  
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .topic {
+    margin: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+  }
+  
+  .topic h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .topic p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+  }
+@media only screen and (max-width: 750px){
+    .navDiv>.menu-btn{
+        display:flex;
+        position: fixed;
+    }
+    .navDiv>.menu{
+        display: flex;
+        position: fixed;
+    }
+	#bigNav{
+        display: none;
+        position: absolute;
+    }
+    .navDiv{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navDiv>img{
+        display: block;
+        position: relative;
+        width: 20%;
+    }
+    .portfolioText,.formHead,.about-section h2{
+        font-size: 24px !important;
+    }
+    .intro h1{
+        font-size: 15px;
+    }
+    .intro a{
+        font-size: 10px;
+    }
+    .frontTextIntro{
+        padding-top: 100px;
+    }
+}
+
+
