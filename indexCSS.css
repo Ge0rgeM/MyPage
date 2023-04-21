@@ -472,12 +472,12 @@ input:focus,textarea:focus{
   .topics {
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: center; */
+      justify-content: center;
     }
     
 .topic {
     /* width: 100%; */
-    flex: 30%;
+    flex: 35%;
     margin: 30px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -531,7 +531,30 @@ input:focus,textarea:focus{
     .frontTextIntro,.aboutDiv,.portfolioDiv{
         padding-top: 110px;
     }
+    .topic{
+        cursor: pointer;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .topic h3{
+        margin-bottom: 0px;
+    }
+    .topic>p{
+        display: none;
+    }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -545,5 +568,92 @@ input:focus,textarea:focus{
     color: #fff;
     padding: 20px;
     border-radius: 10px;
-    display: none;
+    /* display: none; */
   }
+.description-popup {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    animation: slide-in 0.7s ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    display: none;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.popup-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    animation: slide-in 0.7s ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+}
+.popup-content>* {
+    opacity: 0;
+    animation-delay: 1.3s;
+    animation: popup-text 1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes popup-text {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes slide-in {
+    40% {
+        width: 200px;
+        height: 200px;
+        /* transform: translateY(-100px); */
+        /* opacity: 0; */
+        border: 2px solid black;
+        opacity: 1;
+    }
+    100% {
+        border: 2px solid black;
+        width: 300px;
+        height: 200px;
+        opacity: 1;
+        /* transform: translateY(0); */
+    }
+}
+  
+  #open-popup:hover {
+    cursor: pointer;
+  }
+  
+  #close-popup {
+    margin-top: 20px;
+    background-color: #ff6961;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+  }
+  
+  #close-popup:hover {
+    background-color: #ff5a5f;
+  }
+  

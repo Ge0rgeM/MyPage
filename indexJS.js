@@ -182,3 +182,33 @@ downloadBtn.addEventListener('click', () => {
     loadingPopup.style.display = 'none';
   }, 1000);
 });
+
+
+
+const topic = document.getElementsByClassName("topic");
+const topicEls = topic[0].children;
+topic[0].addEventListener("click",function() {
+    topicEls[1].innerText = "!";
+    topicEls[1].style.display = "flex";
+});
+
+
+
+
+
+
+
+
+
+
+const openPopupBtn = document.getElementById('open-popup');
+const closePopupBtn = document.getElementById('close-popup');
+const popup = document.getElementById('popup');
+
+openPopupBtn.addEventListener('click', () => {
+  popup.style.display = 'flex';
+});
+
+closePopupBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
