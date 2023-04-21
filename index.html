@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="navDiv">
-        <img src="./GM.png" alt="MyLogo" class="logo">
+        <img src="./GM.png" alt="MyLogo" class="logo" id="myImage">
         <div class="menu-btn">
             <span></span>
             <span></span>
@@ -17,44 +17,44 @@
           </div>
           <nav class="menu">
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Menu</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Contact Me</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact Me</a></li>
             </ul>
           </nav>
           
         <nav id="bigNav">
-            <img src="./GM.png" alt="MyLogo" class="logo">
+            <img src="./GM.png" alt="MyLogo" class="logo" id="myImage1">
             <div class="buttons">
                 <div>
-                    <a href="#" id="HOME">HOME</a>
+                    <a href="#home" id="HOME">HOME</a>
                     <span>
-                        <a href="#" id="HOME">HOME</a>
+                        <a href="#home" id="HOME">HOME</a>
                     </span>
                 </div>
                 <div>
-                    <a href="" id="ABOUT">ABOUT</a>
+                    <a href="#about" id="ABOUT">ABOUT</a>
                     <span>
-                        <a href="" id="ABOUT">ABOUT</a>
+                        <a href="#about" id="ABOUT">ABOUT</a>
                     </span>
                 </div>
                 <div>
-                    <a href="" id="PORTFOLIO">PORTFOLIO</a>
+                    <a href="#portfolio" id="PORTFOLIO">PORTFOLIO</a>
                     <span>
-                        <a href="" id="PORTFOLIO">PORTFOLIO</a>
+                        <a href="#portfolio" id="PORTFOLIO">PORTFOLIO</a>
                     </span>
                 </div>
                 <div>
-                    <a href="" id="CONTACT_ME">CONTACT ME</a>
+                    <a href="#contact" id="CONTACT_ME">CONTACT ME</a>
                     <span>
-                        <a href="" id="CONTACT_ME">CONTACT ME</a>
+                        <a href="#contact" id="CONTACT_ME">CONTACT ME</a>
                     </span>
                 </div>
             </div>
         </nav>
     </div>
-    <div class="frontTextIntro">
+    <div class="frontTextIntro" id="home">
         <div class="intro">
             <div class="introDiv">
                 <h1>Hello, I'm <span>George</span></h1>
@@ -62,14 +62,15 @@
                     <p class="desc">This is my official portfolio website to show <br> all details and project i have already made.</p>
                 </div>
             </div>
-            <a href="Https://drive.google.com/uc?export=download&id=1-D4yABlLAnPkPD-Fi-oqzxvDY9xtXITl">Download CV</a>
+            <div id="loading-popup">Loading...</div>
+            <a href="Https://drive.google.com/uc?export=download&id=1-D4yABlLAnPkPD-Fi-oqzxvDY9xtXITl" id="download-btn">Download CV</a>
         </div>
         <div class="imagesDiv">
             <div class="myPhotoDiv"></div>
             <div class="shapeDiv"></div>
         </div>
     </div>
-    <div class="aboutDiv">
+    <div class="aboutDiv" id="about">
         <section class="about-section">
             <h2>About Me</h2>
             <div class="topics">
@@ -92,7 +93,7 @@
             </div>
         </section>
     </div>
-    <div class="portfolioDiv">
+    <div class="portfolioDiv" id="portfolio">
         <div class="sectorName">
             <h1 class="portfolioText">
                 P O R T F O L I O
@@ -113,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div class="formDiv">
+    <div class="formDiv" id="contact">
         <div class="sectorName" style="opacity: 0; height: 150px;">
             <h1 class="ContactMe">
                 Contact Me

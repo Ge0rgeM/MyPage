@@ -83,6 +83,9 @@ nav{
 .navDiv>nav>img{
     width: 20%;
 }
+img[src="./GM.png"]{
+    cursor: pointer;
+}
 .buttons{
     display:flex;
     justify-content: space-around;
@@ -98,7 +101,7 @@ nav{
     padding: 20px 10px;
     width: fit-content;
     position: relative;
-    transition: transform 0.3s;
+    transition: transform 0.2s;
 }
 .buttons>div>a,.buttons>div>span>a{
     text-decoration: none;
@@ -197,7 +200,9 @@ nav{
 } 
 */
 .frontTextIntro>.intro>a:hover{
-    background-color: #201f1f;
+    /* background-color: #201f1f; */
+    background-color: rgb(65, 65, 65);
+    color: white;
 }
 .imagesDiv{
     width: 50%;
@@ -228,6 +233,9 @@ nav{
     background-image: url('./PhotoMe.png');
     background-repeat: no-repeat;
     background-size: contain;
+}
+.portfolioDiv{
+    padding-top: 200px;
 }
 #portfolioDivs{
     width: 100%;
@@ -449,6 +457,7 @@ input:focus,textarea:focus{
   /* ////////////////////////////// */
   .aboutDiv{
     margin-top: 70px;
+    padding-top: 200px;
     margin-bottom: 70px;
   }
   .about-section {
@@ -461,18 +470,20 @@ input:focus,textarea:focus{
     }
   
   .topics {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .topic {
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: center; */
+    }
+    
+.topic {
+    /* width: 100%; */
+    flex: 30%;
     margin: 30px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
+    max-width: 400px;
   }
   
   .topic h3 {
@@ -517,9 +528,22 @@ input:focus,textarea:focus{
     .intro a{
         font-size: 10px;
     }
-    .frontTextIntro{
-        padding-top: 100px;
+    .frontTextIntro,.aboutDiv,.portfolioDiv{
+        padding-top: 110px;
     }
 }
 
 
+
+
+#loading-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+  }

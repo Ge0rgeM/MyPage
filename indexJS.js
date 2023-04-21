@@ -156,3 +156,29 @@ me.addEventListener("mouseout", function() {
     this.style.transform = "translateX(-4%)";
     shape.style.transform = "translateY(4.5%)";
 });
+
+const myImage = document.getElementById('myImage');
+const myImage1 = document.getElementById('myImage1');
+const scrollToElement = document.getElementById('home');
+
+myImage.addEventListener('click', () => {
+  scrollToElement.scrollIntoView({ behavior: 'smooth' });
+});
+myImage1.addEventListener('click', () => {
+  scrollToElement.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+
+const downloadBtn = document.getElementById('download-btn');
+const loadingPopup = document.getElementById('loading-popup');
+
+downloadBtn.addEventListener('click', () => {
+  loadingPopup.style.display = 'block';
+  // code to start download here
+
+  // simulate download with setTimeout
+  setTimeout(() => {
+    loadingPopup.style.display = 'none';
+  }, 1000);
+});
