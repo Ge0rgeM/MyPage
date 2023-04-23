@@ -672,3 +672,15 @@ input:focus,textarea:focus{
     background-color: #ff5a5f;
   }
   
+
+
+
+  #popup{
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    z-index: 100000;
+    margin: auto;
+    position: relative;
+    display: block;
+  }

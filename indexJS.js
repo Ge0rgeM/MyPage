@@ -60,34 +60,6 @@ window.addEventListener('load', checkViewport);
 window.addEventListener('scroll', checkViewport);
 
 
-/* target.forEach(el => {
-    el.classList.remove("div-transition");
-});
-function callback(entries, observer) {
-    for(let i=0;i<entries.length;i++){
-        if(entries[i].isIntersecting) {
-            console.log("visible");
-            target[i].classList.add("div-transition");
-        } else {
-            console.log("not visible");
-            target[i].classList.remove("div-transition");
-            // target.classList.remove("div-transition"); 
-       }
-    }
-}
-function createObserver(target, callback) {
-   const options = {
-      root: null,
-      threshold: 0.4
-   };
-   const observer = new IntersectionObserver(callback, options);
-   target.forEach(el => {
-        observer.observe(el);
-    });
-}
-createObserver(target, callback); */
-
-
 
 //Project Links Obj
 const projectLinks={};
@@ -109,15 +81,15 @@ function projectClick() {
     }
 }
 
+
+
 const form = document.querySelectorAll('form')[0];
 // Add an event listener for form submission
 form.addEventListener('submit', e => {
   // Prevent the default form submission behavior
   e.preventDefault();
-
   // Get the form data
   const formData = new FormData(form);
-
   // Send the form data to an email address using a third-party service
   fetch('https://formsubmit.co/ajax/G_modebadze3@cu.edu.ge', {
     method: 'POST',
@@ -137,9 +109,9 @@ form.addEventListener('submit', e => {
   });
 });
 
+
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu");
-
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("open");
 });
@@ -157,10 +129,11 @@ me.addEventListener("mouseout", function() {
     shape.style.transform = "translateY(4.5%)";
 });
 
+
+
 const myImage = document.getElementById('myImage');
 const myImage1 = document.getElementById('myImage1');
 const scrollToElement = document.getElementById('home');
-
 myImage.addEventListener('click', () => {
   scrollToElement.scrollIntoView({ behavior: 'smooth' });
 });
@@ -170,9 +143,10 @@ myImage1.addEventListener('click', () => {
 
 
 
+
+
 const downloadBtn = document.getElementById('download-btn');
 const loadingPopup = document.getElementById('loading-popup');
-
 downloadBtn.addEventListener('click', () => {
   loadingPopup.style.display = 'block';
   // code to start download here
@@ -185,86 +159,37 @@ downloadBtn.addEventListener('click', () => {
 
 
 
-const topic = document.getElementsByClassName("topic");
+
 const text = document.querySelectorAll(".topic>p");
-console.log(text);
+const topic = document.getElementsByClassName("topic");
+
+let firstClick = true;
+document.addEventListener("DOMContentLoaded",function() {
+  const popupBack = document.getElementsByClassName("popupBack");
+  const popupWin = document.getElementsByClassName("description-popup");
+  document.addEventListener("click",function(event) {
+    if(firstClick){
+      firstClick=false;
+      return;
+    }
+    for(let i=0;i<topic.length;i++) {
+      const style = getComputedStyle(popupBack[i]);
+      console.log(style.display);
+      if(!popupWin[i].contains(event.target)&&style.display=="flex"){
+        topic[i].children[1].children[0].innerText = "";
+        topic[i].children[1].style.display = "none";
+        firstClick=true;
+        console.log(firstClick);
+        return;
+      }
+    }
+  });
+});
 for(let i=0;i<topic.length;i++) {
   topic[i].addEventListener("click",function() {
-    // if(window.innerWidth<=750){
-    //   let pointOut = false;
-      topic[i].children[1].children[0].innerText = text[i].innerText;
-      topic[i].children[1].style.display = "flex";
-      document.addEventListener("click",function(event,ind) {
-        console.log(i);
-        if(!topic[i].contains(event.target)){
-          topic[i].children[1].children[0].innerText = "";
-          topic[i].children[1].style.display = "none";
-        }
-      });
-    //   window.addEventListener("click",function(e) {
-    //     console.log(e.clientX,e.clientY);
-    //     let div = document.getElementsByClassName("description-popup")[0];
-    //     let rect = div.getBoundingClientRect();
-    //     let r = {
-    //       A: {x: rect.left, y: rect.top},
-    //       B: {x: rect.right, y: rect.top},
-    //       C: {x: rect.right, y: rect.bottom},
-    //       D: {x: rect.left, y: rect.bottom}
-    //     };
-    //     let m = {x: e.clientX,y: e.clientY};
-    //     console.log(pointInRectangle(m,r));
-    //     if(pointOut){
-    //       window.removeEventListener("click",function() {});
-    //       console.log(1);
-    //       topic[i].children[1].children[0].innerText = "";
-    //       topic[i].children[1].style.display = "none";
-    //     }
-    //     if(!pointInRectangle(m,r))
-    //     pointOut = true;
-    //   });
-    // }  
+  // if(window.innerWidth<=750){
+  //   let pointOut = false;
+    topic[i].children[1].children[0].innerText = text[i].innerText;
+    topic[i].children[1].style.display = "flex";
   });
 }
-const el = window;
-const clone = el;
-console.log(el);
-function pointInRectangle(m, r) {
-  let AB = vector(r.A, r.B);
-  let AM = vector(r.A, m);
-  let BC = vector(r.B, r.C);
-  let BM = vector(r.B, m);
-  let dotABAM = dot(AB, AM);
-  let dotABAB = dot(AB, AB);
-  let dotBCBM = dot(BC, BM);
-  let dotBCBC = dot(BC, BC);
-  return 0 <= dotABAM && dotABAM <= dotABAB && 0 <= dotBCBM && dotBCBM <= dotBCBC;
-}
-
-function vector(p1, p2) {
-  return {
-      x: (p2.x - p1.x),
-      y: (p2.y - p1.y)
-  };
-}
-
-function dot(u, v) {
-  return u.x * v.x + u.y * v.y;
-}
-
-
-
-
-
-
-
-// const openPopupBtn = document.getElementById('open-popup');
-// const closePopupBtn = document.getElementById('close-popup');
-// const popup = document.getElementById('popup');
-
-// openPopupBtn.addEventListener('click', () => {
-//   popup.style.display = 'flex';
-// });
-
-// closePopupBtn.addEventListener('click', () => {
-//   popup.style.display = 'none';
-// });
