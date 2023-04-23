@@ -159,37 +159,73 @@ downloadBtn.addEventListener('click', () => {
 
 
 
+function POPUPS() {
+  const text = document.querySelectorAll(".topic>p");
+  const topic = document.getElementsByClassName("topic");
 
-const text = document.querySelectorAll(".topic>p");
-const topic = document.getElementsByClassName("topic");
-
-let firstClick = true;
-document.addEventListener("DOMContentLoaded",function() {
-  const popupBack = document.getElementsByClassName("popupBack");
-  const popupWin = document.getElementsByClassName("description-popup");
+  let firstClick = true;
   document.addEventListener("click",function(event) {
+    const popupWin = document.getElementsByClassName("description-popup");
+    let openWin = checkPopup();
+    if(openWin==-1)
+      return;
     if(firstClick){
       firstClick=false;
       return;
     }
-    for(let i=0;i<topic.length;i++) {
-      const style = getComputedStyle(popupBack[i]);
-      console.log(style.display);
-      if(!popupWin[i].contains(event.target)&&style.display=="flex"){
-        topic[i].children[1].children[0].innerText = "";
-        topic[i].children[1].style.display = "none";
-        firstClick=true;
-        console.log(firstClick);
-        return;
-      }
+    if(!popupWin[openWin].contains(event.target)) {
+      topic[openWin].children[1].children[0].innerText = "";
+      topic[openWin].children[1].style.display = "none";
+      firstClick=true;
     }
   });
-});
-for(let i=0;i<topic.length;i++) {
-  topic[i].addEventListener("click",function() {
-  // if(window.innerWidth<=750){
-  //   let pointOut = false;
-    topic[i].children[1].children[0].innerText = text[i].innerText;
-    topic[i].children[1].style.display = "flex";
+  document.addEventListener("scroll",function(event) {
+    const popupWin = document.getElementsByClassName("description-popup");
+    let openWin = checkPopup();
+    if(openWin==-1)
+      return;
+    if(firstClick){
+      firstClick=false;
+      return;
+    }
+    if(!popupWin[openWin].contains(event.target)) {
+      topic[openWin].children[1].children[0].innerText = "";
+      topic[openWin].children[1].style.display = "none";
+      firstClick=true;
+    }
   });
+
+  function checkPopup() {
+    const popupBack = document.getElementsByClassName("popupBack");
+    for(let i=0;i<popupBack.length;i++) {
+      const style = getComputedStyle(popupBack[i]);
+      if(style.display=='flex')
+        return i; // index
+    }
+    return -1;
+  }
+  for(let i=0;i<topic.length;i++) {
+    topic[i].addEventListener("click",function() {
+    // if(window.innerWidth<=750){
+    //   let pointOut = false;
+      topic[i].children[1].children[0].innerText = text[i].innerText;
+      topic[i].children[1].style.display = "flex";
+    });
+  }
 }
+
+// Create a media query that targets devices with a max width of 600px
+const mediaQuery = window.matchMedia('(max-width: 750px)');
+
+// Define a function to handle the media query changes
+function handleMediaQueryChanges(mediaQuery) {
+  if (mediaQuery.matches) {
+    POPUPS();
+  }
+}
+
+// Call the function once to set the initial background color based on the user's device width
+handleMediaQueryChanges(mediaQuery);
+
+// Add an event listener to the media query that will call the function whenever the device width changes
+mediaQuery.addListener(handleMediaQueryChanges);
