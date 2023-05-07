@@ -1,60 +1,21 @@
 html{
     scroll-behavior: smooth;
 }
-/* Set the width and height of the scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
-  
-  /* Track styles */
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  
-  /* Handle styles */
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-  }
-  
-  /* Handle hover styles */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Floating scrollbar styles */
-  ::-webkit-scrollbar-thumb {
-    border: 2px solid transparent;
-    box-shadow: inset 0 0 0 3px #fff;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Floating scrollbar styles on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    box-shadow: inset 0 0 0 3px #555;
-  }
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  
-  /* Track styles */
-  ::-webkit-scrollbar-track {
+}
+::-webkit-scrollbar-track {
     background-color: #f2f2f2;
     border-radius: 5px;
-  }
-  
-  /* Handle styles */
-  ::-webkit-scrollbar-thumb {
+}
+::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 5px;
-  }
-  
-  /* Handle hover styles */
-  ::-webkit-scrollbar-thumb:hover {
+}
+::-webkit-scrollbar-thumb:hover {
     background-color: #555;
-  }
+}
 *{
     margin: 0 10px 0 10px;
     padding: 0;
@@ -181,26 +142,7 @@ img[src="./GM.png"]{
     border-radius: 5px;
     color: white;
 }
-    /* .frontTextIntro{
-    height: 600px;
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    padding-left: 15%;
-} */
-/* .intro{
-    position: relative;
-    top: -13em;
-    width: 50%;
-} */
-/* .frontTextIntro>.intro>h1{
-    font-size: 2vw;
-    margin-bottom: 10px;
-}
-} 
-*/
 .frontTextIntro>.intro>a:hover{
-    /* background-color: #201f1f; */
     background-color: rgb(65, 65, 65);
     color: white;
 }
@@ -255,9 +197,6 @@ img[src="./GM.png"]{
     background-color: green;
     cursor: pointer;
     transition: transform 1s;
-
-    /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
-    /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px; */
     box-shadow: -8px 6px 33px -12px rgba(0,0,0,1);
 } 
 #portfolioDivs>div:hover{   
@@ -358,8 +297,8 @@ input:focus,textarea:focus{
     outline-style: dashed;
     outline-color: #233ef4;
 }
-  
 /* FORM */  
+
 .menuDiv{
     width: 300px;
     height: 300px;
@@ -383,8 +322,6 @@ input:focus,textarea:focus{
 .menuDiv>.menuLine:nth-child(3){
     margin-top: 10px;
 }
-/* ///////////////////// */
-
 .menu-btn {
     display: flex;
     flex-direction: column;
@@ -395,29 +332,24 @@ input:focus,textarea:focus{
     top: 20px;
     z-index: 999;
     cursor: pointer;
-  }
-  
-  .menu-btn span {
+}
+.menu-btn span {
     width: 30px;
     height: 3px;
     margin: 3px;
     background-color: #333;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .menu-btn.open span:nth-child(1) {
+}
+.menu-btn.open span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-  }
-  
-  .menu-btn.open span:nth-child(2) {
+}
+.menu-btn.open span:nth-child(2) {
     opacity: 0;
-  }
-  
-  .menu-btn.open span:nth-child(3) {
+}
+.menu-btn.open span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-  }
-  
-  .menu {
+}
+.menu {
     position: fixed;
     right: -300px;
     top: 0;
@@ -427,56 +359,46 @@ input:focus,textarea:focus{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     z-index: 998;
-  }
-  
-  .menu ul {
+}
+.menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
-  .menu li {
+}
+.menu li {
     margin: 0;
-  }
-  
-  .menu a {
+}
+.menu a {
     display: block;
     padding: 10px;
     text-decoration: none;
     color: #333;
-  }
-  
-  .menu a:hover {
+}
+.menu a:hover {
     background-color: #eee;
-  }
-  
-  .menu-btn.open ~ .menu {
+}
+.menu-btn.open ~ .menu {
     right: 0;
-  }
-  
-  /* ////////////////////////////// */
-  .aboutDiv{
+}
+.aboutDiv{
     margin-top: 70px;
     padding-top: 200px;
     margin-bottom: 70px;
-  }
-  .about-section {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .about-section h2{
-        font-size: 3.5vw;
-    }
-  
-  .topics {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
+}
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about-section h2{
+    font-size: 3.5vw;
+}
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .topic {
-    /* width: 100%; */
     flex: 35%;
     margin: 30px;
     padding: 20px;
@@ -484,19 +406,18 @@ input:focus,textarea:focus{
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
-  }
-  
-  .topic h3 {
+}
+.topic h3 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
-  .topic p {
+}
+.topic p {
     font-size: 16px;
     line-height: 1.5;
     color: #666;
-  }
+} 
+/* Resposnive  v*/
 @media only screen and (max-width: 750px){
     .navDiv>.menu-btn{
         display:flex;
@@ -545,7 +466,7 @@ input:focus,textarea:focus{
         display: none;
     }
 }
-
+/* Resposnive  ^ */
 .popupBack{
     position: fixed;
     top: 0;
@@ -576,13 +497,6 @@ input:focus,textarea:focus{
     animation: popup-text 1s ease-in;
     animation-fill-mode: forwards;
 }
-
-
-
-
-
-
-
 #loading-popup {
     position: fixed;
     top: 50%;
@@ -593,8 +507,7 @@ input:focus,textarea:focus{
     padding: 20px;
     border-radius: 10px;
     display: none;
-  }
-
+}
 #popup {
     position: fixed;
     top: 0;
@@ -606,8 +519,7 @@ input:focus,textarea:focus{
     z-index: 10000;
     justify-content: center;
     align-items: center;
-  }
-  
+} 
 .popup-content {
     background-color: white;
     border-radius: 10px;
@@ -637,8 +549,6 @@ input:focus,textarea:focus{
     40% {
         width: 200px;
         height: 200px;
-        /* transform: translateY(-100px); */
-        /* opacity: 0; */
         border: 2px solid black;
         opacity: 1;
     }
@@ -647,15 +557,12 @@ input:focus,textarea:focus{
         width: 300px;
         height: 200px;
         opacity: 1;
-        /* transform: translateY(0); */
     }
 }
-  
-  #open-popup:hover {
+#open-popup:hover {
     cursor: pointer;
-  }
-  
-  #close-popup {
+}
+#close-popup {
     margin-top: 20px;
     background-color: #ff6961;
     border: none;
@@ -664,15 +571,11 @@ input:focus,textarea:focus{
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.2s ease-out;
-  }
-  #close-popup:hover {
+}
+#close-popup:hover {
     background-color: #ff5a5f;
-  }
-  
-
-
-
-  #popup{
+}
+#popup{
     width: 600px;
     height: 600px;
     background-color: black;
@@ -680,4 +583,4 @@ input:focus,textarea:focus{
     margin: auto;
     position: relative;
     display: block;
-  }
+}
