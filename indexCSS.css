@@ -21,7 +21,7 @@ html{
     padding: 0;
 }
 .navDiv{
-    width: 100%;
+    width: 95%;
     margin: auto;
     height: fit-content;
     position: fixed;
@@ -29,7 +29,7 @@ html{
     background-color: white;
     overflow: hidden;
 }
-.navDiv>img,.navDiv>.menu-btn,.navDiv>.menu{
+.navDiv>div>img,.menu-btn,.menu{
     display: none;
     position: absolute;
 }
@@ -214,6 +214,9 @@ img[src="./GM.png"]{
 
 
   /* FORM */
+.formDiv{
+    margin-top: 175px;
+}
 .formDiv>form{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 10px;
     width: fit-content;
@@ -240,39 +243,33 @@ img[src="./GM.png"]{
     width: fit-content;
     display: flex;
 }
-.form-group{
-    margin: 0;
-}
-.form-group>input{
-    width: 80%;
-}
-.secondForm{
-    width: 100%;
-}
-.secondForm>.tempDiv{
-    width: 90%;
-    margin: auto;
-}
-.form-group>textarea{
-    width: 90%;
-}
 .firstForm>.first>.form-group>input{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     background-color: #e7eaff;   
 }
 .firstForm>.second>.form-group>input{
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     background-color:  #c7cdfd;
 }
+.secondForm{
+    width: 80%;
+}
 .secondForm>.tempDiv>.form-group>textarea{
+    width: 80%;
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
     border: none;
     resize: vertical;
@@ -298,57 +295,6 @@ input:focus,textarea:focus{
     outline-color: #233ef4;
 }
 /* FORM */  
-
-.menuDiv{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: gray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-.menuDiv>.menuLine{
-    width: 50%;
-    height: 1px;
-    border-bottom: black 5px solid;
-    z-index: 100;
-}
-.menuDiv>.menuLine:nth-child(1){
-    margin-bottom: 10px;
-}
-.menuDiv>.menuLine:nth-child(3){
-    margin-top: 10px;
-}
-.menu-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 999;
-    cursor: pointer;
-}
-.menu-btn span {
-    width: 30px;
-    height: 3px;
-    margin: 3px;
-    background-color: #333;
-    transition: all 0.3s ease-in-out;
-}
-.menu-btn.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.menu-btn.open span:nth-child(2) {
-    opacity: 0;
-}
-.menu-btn.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
 .menu {
     position: fixed;
     right: -300px;
@@ -419,11 +365,37 @@ input:focus,textarea:focus{
 } 
 /* Resposnive  v*/
 @media only screen and (max-width: 750px){
-    .navDiv>.menu-btn{
-        display:flex;
-        position: fixed;
+    #navFirstDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
-    .navDiv>.menu{
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        z-index: 999;
+        cursor: pointer;
+    }
+    .menu-btn span {
+        width: 30px;
+        height: 3px;
+        margin: 3px;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+    }
+    .menu-btn.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-btn.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-btn.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .menu{
         display: flex;
         position: fixed;
     }
@@ -435,7 +407,7 @@ input:focus,textarea:focus{
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .navDiv>img{
+    .navDiv>div>img{
         display: block;
         position: relative;
         width: 20%;
@@ -465,6 +437,26 @@ input:focus,textarea:focus{
     .topic>p{
         display: none;
     }
+    .first{
+        display: flex;
+        flex-direction: column;
+    }
+    .second{
+        display: flex;
+        flex-direction: column;
+    }
+    .formDiv>form{
+        height: 550px;
+    }
+    .secondForm{
+        width: 100%;
+    }
+    /* .secondForm{
+        margin: auto;
+    }
+    .form-group{
+        width: fit-content  ;
+    } */
 }
 /* Resposnive  ^ */
 .popupBack{
@@ -584,3 +576,7 @@ input:focus,textarea:focus{
     position: relative;
     display: block;
 }
+
+/* body * {
+    border: dashed red 1px;
+} */

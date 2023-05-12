@@ -103,7 +103,7 @@ form.addEventListener('submit', e => {
 
 // SIDE MENU OPEN/CLOSE TOGGLE
 const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
+// const menu = document.querySelector(".menu");
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("open");
 });
