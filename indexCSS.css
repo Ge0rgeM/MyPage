@@ -16,10 +16,10 @@ html{
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-*{
+/* *{
     margin: 0 10px 0 10px;
     padding: 0;
-}
+} */
 .navDiv{
     width: 95%;
     margin: auto;
@@ -214,7 +214,7 @@ img[src="./GM.png"]{
 
 
   /* FORM */
-.formDiv{
+/* .formDiv{
     margin-top: 175px;
 }
 .formDiv>form{
@@ -225,7 +225,6 @@ img[src="./GM.png"]{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     margin: 0 auto;
     background: linear-gradient(#e7eaff, #a4b1fc, #233ef4);
     border-radius: 5px;
@@ -244,9 +243,6 @@ img[src="./GM.png"]{
     display: flex;
 }
 .firstForm>.first>.form-group>input{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -293,8 +289,84 @@ input:focus,textarea:focus{
     outline-offset: 2px;
     outline-style: dashed;
     outline-color: #233ef4;
+} */
+.formWrap{
+    width: 100%;
 }
-/* FORM */  
+.formCon{
+    width: 55%;
+    margin: 0 auto;
+    display: flex;
+}
+.leftSide {
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    width: 50%;
+    background: #272a34;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+.rightSide{
+    border-radius: 0 10px 10px 0;  
+    width: 50%;
+    color: white !important;
+    background: #1c1e25;
+}
+.leftSide h3 {
+    color: white !important;
+}
+.infoWrap,.contactWrap{
+    padding: 2.5rem !important;
+}
+.infoWrap{
+    height: fit-content; /* გასასწორებელი */
+}
+.information{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.telInfo p{
+    cursor: pointer;
+}
+.CVInfo a {
+    text-decoration: none;
+    color:white;
+}
+.telInfo{
+    display: flex;
+}
+#copyPopUp{
+    display: none;
+    position: relative;
+    padding: 10px;
+    height: 90%;
+    margin: auto;
+    margin-left: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    z-index: 9999;
+    transition: transform 1s ease;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 50%;
+}
+.icon span{
+    font-size: 20px;
+}
+body * {
+    border: dashed rgb(104, 97, 97) 1px;
+}
+/* FORM */ 
 .menu {
     position: fixed;
     right: -300px;
@@ -451,12 +523,6 @@ input:focus,textarea:focus{
     .secondForm{
         width: 100%;
     }
-    /* .secondForm{
-        margin: auto;
-    }
-    .form-group{
-        width: fit-content  ;
-    } */
 }
 /* Resposnive  ^ */
 .popupBack{
@@ -489,7 +555,7 @@ input:focus,textarea:focus{
     animation: popup-text 1s ease-in;
     animation-fill-mode: forwards;
 }
-#loading-popup {
+#loading-popup,#loading-ContactPopup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -576,7 +642,3 @@ input:focus,textarea:focus{
     position: relative;
     display: block;
 }
-
-/* body * {
-    border: dashed red 1px;
-} */

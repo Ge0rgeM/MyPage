@@ -1,5 +1,8 @@
 // USING FUNCTIONS 
 projectClick();
+textToCopy(document.getElementById('toCopy'));
+CVdownloader(document.getElementById('download-btn'),document.getElementById('loading-popup'));
+CVdownloader(document.getElementById('download-ContactBtn'),document.getElementById('loading-ContactPopup'));
 // USING FUNCTIONS 
 
 
@@ -31,11 +34,27 @@ const resize_ob = new ResizeObserver(function(entries) {
 });
 //MAKE NAV BUTTONS RESPOSNIVE
 
+
+
+
+
+// res();
+function res() {
+    let a = document.getElementsByClassName("infoWrap")[0];
+    let b = document.getElementsByClassName("contactWrap")[0].offsetHeight;
+    console.log(a,b);
+    a.style.height -=30+'px';
+}
+ 
+
+
+
+
 // FOR SMOOTH SCROLLING 
 const target = []; // ARRAY TO STORE ALL ELEMETS THAT NEED TO BE APPEARING/DISSAPPEARING
 target.push(document.getElementsByClassName("portfolioDiv")[0].children[0]);
 target.push(...document.getElementsByClassName("portfolioDiv")[0].children[1].children);
-target.push(document.querySelectorAll(".formDiv>form")[0]);
+// target.push(document.querySelectorAll(".formDiv>form")[0]);
 target.push(document.querySelectorAll(".about-section h2")[0]);
 target.push(...document.getElementsByClassName("topics")[0].children);
 function checkViewport() {
@@ -76,34 +95,34 @@ function projectClick() {
 //PROJECT LINKS
 
 // FORM 
-const form = document.querySelectorAll('form')[0];
-// Add an event listener for form submission
-form.addEventListener('submit', e => {
-    // Prevent the default form submission behavior
-    e.preventDefault();
-    // Get the form data
-    const formData = new FormData(form);
-    // Send the form data to an email address using a third-party service
-    fetch('https://formsubmit.co/ajax/G_modebadze3@cu.edu.ge', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(formData)),
-    })
-    .then(response => {
-    alert('Your message has been sent!');
-    form.reset();
-})
-.catch(error => {
-    // Handle any errors that occur during the request
-    console.error(error);
-    alert('An error occurred while sending your message.');
-});
-});
+// const form = document.querySelectorAll('form')[0];
+// // Add an event listener for form submission
+// form.addEventListener('submit', e => {
+//     // Prevent the default form submission behavior
+//     e.preventDefault();
+//     // Get the form data
+//     const formData = new FormData(form);
+//     // Send the form data to an email address using a third-party service
+//     fetch('https://formsubmit.co/ajax/G_modebadze3@cu.edu.ge', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(Object.fromEntries(formData)),
+//     })
+//     .then(response => {
+//     alert('Your message has been sent!');
+//     form.reset();
+// })
+// .catch(error => {
+//     // Handle any errors that occur during the request
+//     console.error(error);
+//     alert('An error occurred while sending your message.');
+// });
+// });
 // FORM 
 
 // SIDE MENU OPEN/CLOSE TOGGLE
 const menuBtn = document.querySelector(".menu-btn");
-// const menu = document.querySelector(".menu");
+const menu = document.querySelector(".menu");
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("open");
 });
@@ -135,17 +154,17 @@ myImage1.addEventListener('click', () => {
 // CLICKABLE LOGO TO GET TO TOP
 
 // DOWNLOADING BUTTON LOADING POPUP 
-const downloadBtn = document.getElementById('download-btn');
-const loadingPopup = document.getElementById('loading-popup');
-downloadBtn.addEventListener('click', () => {
-    loadingPopup.style.display = 'block';
-    // code to start download here
-    
-    // simulate download with setTimeout
-    setTimeout(() => {
-        loadingPopup.style.display = 'none';
-    }, 1000);
-});
+function CVdownloader(div,popup) {
+    div.addEventListener('click', () => {
+        popup.style.display = 'block';
+        // code to start download here
+        
+        // simulate download with setTimeout
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 1000);
+    });
+}
 // DOWNLOADING BUTTON LOADING POPUP 
 
 function POPUPS() {
@@ -200,6 +219,27 @@ function POPUPS() {
         });
     }
 }
+// COPY ON CLICK
+function textToCopy(textDoc) {
+    textDoc.addEventListener('click', () => {
+    // Get the text content of the element
+    const text = textDoc.textContent;
+    // Copy the text to the clipboard
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            const popupMessage = document.getElementById("copyPopUp"); 
+            popupMessage.style.display = "block";
+            setTimeout(function() {
+                popupMessage.style.display = "none";
+            }, 700);
+            console.log('Text copied to clipboard!');
+        })
+        .catch((error) => {
+            console.error('Failed to copy text: ', error);
+        });
+    });
+}
+// COPY ON CLICK
 
 //MEDIA QUERY 
 // Create a media query that targets devices with a max width of 750px
