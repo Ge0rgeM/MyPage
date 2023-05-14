@@ -173,30 +173,35 @@
       
         <button type="submit" class="submit-button">Send</button>
       </form> -->
-      <div class="formWrap">
+      <div class="formWrap" id="contact">
         <div class="formCon">
             <div class="leftSide">
                 <div class="contactWrap">
                     <h3>Contact Me</h3>
-                    <form action="POST" id="contactForm">
+                    <form id="contactForm">
                         <div class="row">
                             <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="First name" required>
+                                <input type="text" id="name" name="name" placeholder="First Name" required>
+                                <label id="name-error" class="error" for="name">Please enter your Name</label>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="surname" name="surname" placeholder="Last name" required>
+                                <input type="text" id="surname" name="surname" placeholder="Last Name" required>
+                                <label id="surname-error" class="error" for="surname">Please enter your Surname</label>
                             </div>
                             <div class="form-group">
                                 <input type="email" id="email" name="email" placeholder="Email" required>
+                                <label id="email-error" class="error" for="email">Please enter a valid email address</label>
                             </div>
                             <div class="form-group">
                                 <input type="tel" id="phone" name="phone" placeholder="Phone (Optional)">
                             </div>
                             <div class="form-group">
                                 <textarea id="message" name="message" rows="4" placeholder="Message..." required></textarea>
+                                <label id="message-error" class="error" for="message">Please enter a message</label>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="submit-button">Send</button>
+                                <button id="submitBtn" type="submit" class="submit-button">Submit!</button>
+                                <div id="loading-SubmitPopup">Loading...</div>
                             </div>
                         </div>
                     </form>

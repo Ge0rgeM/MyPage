@@ -38,12 +38,14 @@ const resize_ob = new ResizeObserver(function(entries) {
 
 
 
-// res();
+res();
 function res() {
-    let a = document.getElementsByClassName("infoWrap")[0];
-    let b = document.getElementsByClassName("contactWrap")[0].offsetHeight;
-    console.log(a,b);
-    a.style.height -=30+'px';
+    let rH = document.getElementsByClassName("infoWrap")[0].offsetHeight;
+    let lH = document.getElementsByClassName("contactWrap")[0].offsetHeight+50;
+    let rD = document.getElementsByClassName("infoWrap")[0];
+    let lD = document.getElementsByClassName("contactWrap")[0];
+    rD.style.height = Math.max(lH-80,rH-80) + 'px';
+    lD.style.height = Math.max(lH-80,rH-80) + 'px';
 }
  
 
@@ -95,29 +97,90 @@ function projectClick() {
 //PROJECT LINKS
 
 // FORM 
-// const form = document.querySelectorAll('form')[0];
-// // Add an event listener for form submission
-// form.addEventListener('submit', e => {
-//     // Prevent the default form submission behavior
-//     e.preventDefault();
-//     // Get the form data
-//     const formData = new FormData(form);
-//     // Send the form data to an email address using a third-party service
-//     fetch('https://formsubmit.co/ajax/G_modebadze3@cu.edu.ge', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify(Object.fromEntries(formData)),
-//     })
-//     .then(response => {
-//     alert('Your message has been sent!');
-//     form.reset();
-// })
-// .catch(error => {
-//     // Handle any errors that occur during the request
-//     console.error(error);
-//     alert('An error occurred while sending your message.');
-// });
-// });
+const button = document.getElementById("submitBtn");
+button.addEventListener("click",(event)=>{
+    event.preventDefault();
+    const form = document.querySelectorAll('form')[0];
+    if(!form.checkValidity()) {
+        console.log(1);
+        const style = document.createElement('style');
+        style.textContent = `
+            .form-group input:invalid + .error,.form-group textarea:invalid + .error {
+                display: block;
+            }
+        `;
+        document.head.appendChild(style);
+        // let all = window.getComputedStyle(document.querySelectorAll("input")[0]);
+    }else {
+        let errorList = document.getElementsByClassName("error");
+
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+        
+        // არ მუშაოოოოოოოოოოოოოოოოოოოოოოოოოოოოობს
+        for(let i=0;i<errorList.length;i++) {
+            const computedStyle = window.getComputedStyle(errorList[i]);
+            if(computedStyle.getPropertyValue("display")==="block"){
+                errorList[i].style.removeProperty("display");
+            }
+        }
+        // არ მუშაოოოოოოოოოოოოოოოოოოოოოოოოოოოოობს
+
+
+
+
+
+
+
+
+
+
+
+
+
+        formSubmit(form);
+    }
+});
+    
+function formSubmit(form) {
+    // Get the form data
+    const formData = new FormData(form);
+    
+    // POPUP
+    let popup = document.getElementById("loading-SubmitPopup");
+    popup.style.display = 'block';
+    // code to start download here
+    
+    // simulate download with setTimeout
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 1500);
+    // POPUP
+
+    // Send the form data to an email address using a third-party service
+    fetch('https://formsubmit.co/ajax/G_modebadze3@cu.edu.ge', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData)),
+    })
+    .then(response => {
+        alert('Your message has been sent!');
+        form.reset();
+    })
+    .catch(error => {
+        // Handle any errors that occur during the request
+        alert('An error occurred while sending your message.');
+    });
+}
 // FORM 
 
 // SIDE MENU OPEN/CLOSE TOGGLE
