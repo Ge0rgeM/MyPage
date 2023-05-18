@@ -95,7 +95,6 @@ function projectClick() {
     }
 }
 //PROJECT LINKS
-
 // FORM 
 const button = document.getElementById("submitBtn");
 button.addEventListener("click",(event)=>{
@@ -110,51 +109,24 @@ button.addEventListener("click",(event)=>{
             }
         `;
         document.head.appendChild(style);
-        // let all = window.getComputedStyle(document.querySelectorAll("input")[0]);
     }else {
-        let errorList = document.getElementsByClassName("error");
-
-        
-        
-        
-        
-        
-        
-        
-
-
-
-
-        
-        // არ მუშაოოოოოოოოოოოოოოოოოოოოოოოოოოოოობს
-        for(let i=0;i<errorList.length;i++) {
-            const computedStyle = window.getComputedStyle(errorList[i]);
-            if(computedStyle.getPropertyValue("display")==="block"){
-                errorList[i].style.removeProperty("display");
+        const style = document.createElement('style');
+        style.textContent = `
+            .form-group input:invalid + .error,.form-group textarea:invalid + .error {
+                display: none;
             }
-        }
-        // არ მუშაოოოოოოოოოოოოოოოოოოოოოოოოოოოოობს
-
-
-
-
-
-
-
-
-
-
-
-
-
+        `;
+        document.head.appendChild(style);
         formSubmit(form);
     }
 });
-    
 function formSubmit(form) {
+    // Prevent Spam Submitting
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+
     // Get the form data
     const formData = new FormData(form);
-    
     // POPUP
     let popup = document.getElementById("loading-SubmitPopup");
     popup.style.display = 'block';
@@ -165,7 +137,7 @@ function formSubmit(form) {
         popup.style.display = 'none';
     }, 1500);
     // POPUP
-
+    
     // Send the form data to an email address using a third-party service
     fetch('https://formsubmit.co/ajax/G_modebadze3@cu.edu.ge', {
         method: 'POST',
@@ -174,6 +146,7 @@ function formSubmit(form) {
     })
     .then(response => {
         alert('Your message has been sent!');
+        btn.disabled = false;
         form.reset();
     })
     .catch(error => {
@@ -182,6 +155,21 @@ function formSubmit(form) {
     });
 }
 // FORM 
+
+// Open map for Georgia,Tbilisi
+function openMap() {
+    const mapURL = `https://www.google.com/maps/place/Tbilisi/@41.7233144,44.7900053,12z/data=!4m12!1m5!3m4!2zNDHCsDQyJzU0LjQiTiA0NMKwNDknMzcuNiJF!8m2!3d41.7151111!4d44.8271111!3m5!1s0x40440cd7e64f626b:0x61d084ede2576ea3!8m2!3d41.6938026!4d44.8015168!16zL20vMGJtNGo`;
+    window.open(mapURL);
+}
+// Open map for Georgia,Tbilisi
+
+
+// Clickable Gmail
+const emailText = document.getElementsByClassName('gmailInfo')[0].children[0];
+emailText.addEventListener('click', function() {
+  window.location.href = 'mailto:G_Modebadze3@cu.edu.ge';
+});
+// Clickable Gmail
 
 // SIDE MENU OPEN/CLOSE TOGGLE
 const menuBtn = document.querySelector(".menu-btn");
@@ -315,4 +303,4 @@ function handleMediaQueryChanges(mediaQuery) {
 }
 handleMediaQueryChanges(mediaQuery);
 mediaQuery.addListener(handleMediaQueryChanges);
-//MEDIA QUERY 
+//MEDIA QUERY  

@@ -16,10 +16,6 @@ html{
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-/* *{
-    margin: 0 10px 0 10px;
-    padding: 0;
-} */
 .navDiv{
     width: 95%;
     margin: auto;
@@ -188,6 +184,7 @@ img[src="./GM.png"]{
 #portfolioDivs>div{
     max-width: 600px;
     max-height: 300px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -212,85 +209,10 @@ img[src="./GM.png"]{
 }
 /* For SMOOTH scrolling */
 
-
-  /* FORM */
-/* .formDiv{
-    margin-top: 175px;
+/* FORM */ 
+#contact{
+    margin-top: 200px;
 }
-.formDiv>form{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 10px;
-    width: fit-content;
-    height: 450px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    background: linear-gradient(#e7eaff, #a4b1fc, #233ef4);
-    border-radius: 5px;
-}
-.formDiv>form>h2{
-    font-size: 3vw;
-    padding-top: 10px;
-    font-weight: bold;
-    color: #8395c5;
-}
-.firstForm{
-    margin-top: 20px;
-}
-.firstForm>.first,.firstForm>.second{
-    width: fit-content;
-    display: flex;
-}
-.firstForm>.first>.form-group>input{
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #e7eaff;   
-}
-.firstForm>.second>.form-group>input{
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color:  #c7cdfd;
-}
-.secondForm{
-    width: 80%;
-}
-.secondForm>.tempDiv>.form-group>textarea{
-    width: 80%;
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: none;
-    resize: vertical;
-    background-color: #a4b1fc;
-}
-.formDiv>form>input{
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #233ef4;
-    color: black;
-    padding: 10px;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: all 1s;
-}
-.formDiv>form>input:hover{
-    color: white;
-}
-input:focus,textarea:focus{
-    outline-offset: 2px;
-    outline-style: dashed;
-    outline-color: #233ef4;
-} */
-
 .formCon{
     width: 55%;
     margin: 0 auto;
@@ -374,6 +296,9 @@ input:focus,textarea:focus{
     text-decoration: none;
     color:white;
 }
+.gmailInfo p,.locInfo p{
+    cursor: pointer;
+}
 .telInfo{
     display: flex;
 }
@@ -433,12 +358,6 @@ input:-webkit-autofill:active  {
     font-size: 12px;
     color: rgba(246, 92, 120, 1);
 }
-/* .form-group input:invalid + .error,.form-group textarea:invalid + .error {
-    display: block;
-} */
-/* body * {
-    border: dashed rgb(104, 97, 97) 1px;
-} */
 /* FORM */ 
 .menu {
     position: fixed;
@@ -715,3 +634,8 @@ input:-webkit-autofill:active  {
     position: relative;
     display: block;
 }
+
+
+/* body * {
+    border: dashed rgb(104, 97, 97) 1px;
+} */
