@@ -1,10 +1,44 @@
+// GLOBAL
+// Create a media query that targets devices with a max width of 750px
+const mediaQuery = window.matchMedia('(max-width: 750px)');
+// ARRAY TO STORE ALL ELEMETS THAT NEED TO BE APPEARING/DISSAPPEARING
+const target = []; 
+// form Submit Button
+const button = document.getElementById("submitBtn");
+// Email Text (p)
+const emailText = document.getElementsByClassName('gmailInfo')[0].children[0];
+// Side menu Button and Div
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.querySelector(".menu");
+// Photo of me and a shape
+let shape = document.getElementsByClassName("shapeDiv")[0];
+let me = document.getElementsByClassName("myPhotoDiv")[0];
+// Logo for big and small screen and #home (for fast navigation)
+const myImage = document.getElementById('myImage');
+const myImage1 = document.getElementById('myImage1');
+const scrollToElement = document.getElementById('home');
+// GLOBAL
+
 // USING FUNCTIONS 
 projectClick();
 textToCopy(document.getElementById('toCopy'));
 CVdownloader(document.getElementById('download-btn'),document.getElementById('loading-popup'));
 CVdownloader(document.getElementById('download-ContactBtn'),document.getElementById('loading-ContactPopup'));
+if(!mediaQuery.matches){
+    res();
+}
 // USING FUNCTIONS 
 
+//MEDIA QUERY 
+// Define a function to handle the media query changes
+function handleMediaQueryChanges(mediaQuery) {
+    if (mediaQuery.matches) {
+        POPUPS(); 
+    }
+}
+handleMediaQueryChanges(mediaQuery);
+mediaQuery.addListener(handleMediaQueryChanges);
+//MEDIA QUERY  
 
 //MAKE NAV BUTTONS RESPOSNIVE
 const resize_navButtons = new ResizeObserver(function(entries) {
@@ -34,11 +68,7 @@ const resize_ob = new ResizeObserver(function(entries) {
 });
 //MAKE NAV BUTTONS RESPOSNIVE
 
-
-
-
-
-res();
+// form left and right side resizer
 function res() {
     let rH = document.getElementsByClassName("infoWrap")[0].offsetHeight;
     let lH = document.getElementsByClassName("contactWrap")[0].offsetHeight+50;
@@ -47,13 +77,9 @@ function res() {
     rD.style.height = Math.max(lH-80,rH-80) + 'px';
     lD.style.height = Math.max(lH-80,rH-80) + 'px';
 }
+// form left and right side resizer
  
-
-
-
-
 // FOR SMOOTH SCROLLING 
-const target = []; // ARRAY TO STORE ALL ELEMETS THAT NEED TO BE APPEARING/DISSAPPEARING
 target.push(document.getElementsByClassName("portfolioDiv")[0].children[0]);
 target.push(...document.getElementsByClassName("portfolioDiv")[0].children[1].children);
 // target.push(document.querySelectorAll(".formDiv>form")[0]);
@@ -85,7 +111,7 @@ function projectClick() {
     let projects = document.getElementById("portfolioDivs").children;
     for(let i=0;i<projects.length;i++) {
         projects[i].addEventListener("click",function() {
-            const newTab = window.open(projectLinks[projects[i].id],"_blank");
+            window.open(projectLinks[projects[i].id],"_blank");
         });
         projects[i].addEventListener('mousedown',function(e) {
             if(e.button==1){
@@ -96,7 +122,6 @@ function projectClick() {
 }
 //PROJECT LINKS
 // FORM 
-const button = document.getElementById("submitBtn");
 button.addEventListener("click",(event)=>{
     event.preventDefault();
     const form = document.querySelectorAll('form')[0];
@@ -165,23 +190,18 @@ function openMap() {
 
 
 // Clickable Gmail
-const emailText = document.getElementsByClassName('gmailInfo')[0].children[0];
 emailText.addEventListener('click', function() {
   window.location.href = 'mailto:G_Modebadze3@cu.edu.ge';
 });
 // Clickable Gmail
 
 // SIDE MENU OPEN/CLOSE TOGGLE
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("open");
 });
 // SIDE MENU OPEN/CLOSE TOGGLE
 
 // TO MOVE PHOTO ON HOVER
-let shape = document.getElementsByClassName("shapeDiv")[0];
-let me = document.getElementsByClassName("myPhotoDiv")[0];
 me.addEventListener("mouseover", function() {
     this.style.transform = "translateX(4%)";
     shape.style.transform = "translateY(-4.5%)";
@@ -193,9 +213,6 @@ me.addEventListener("mouseout", function() {
 // TO MOVE PHOTO ON HOVER
 
 // CLICKABLE LOGO TO GET TO TOP
-const myImage = document.getElementById('myImage');
-const myImage1 = document.getElementById('myImage1');
-const scrollToElement = document.getElementById('home');
 myImage.addEventListener('click', () => {
     scrollToElement.scrollIntoView({ behavior: 'smooth' });
 });
@@ -291,16 +308,3 @@ function textToCopy(textDoc) {
     });
 }
 // COPY ON CLICK
-
-//MEDIA QUERY 
-// Create a media query that targets devices with a max width of 750px
-const mediaQuery = window.matchMedia('(max-width: 750px)');
-// Define a function to handle the media query changes
-function handleMediaQueryChanges(mediaQuery) {
-    if (mediaQuery.matches) {
-        POPUPS();
-    }
-}
-handleMediaQueryChanges(mediaQuery);
-mediaQuery.addListener(handleMediaQueryChanges);
-//MEDIA QUERY  

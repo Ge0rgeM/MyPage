@@ -515,6 +515,28 @@ input:-webkit-autofill:active  {
     .secondForm{
         width: 100%;
     }
+    .formCon{
+        display: block;
+        width: 80%;
+    }
+    .leftSide {
+        margin: auto;
+        width: 90%;
+        border-radius: 10px 10px 0 0;
+        background: #272a34;
+    }
+    .rightSide{
+        margin: auto;
+        width: 90%;
+        height: fit-content;
+        border-radius: 0 0 10px 10px;  
+        color: white !important;
+        background: #1c1e25;
+    }
+    /* body * {
+        border: dashed rgb(104, 97, 97) 1px;
+    } */
+
 }
 /* Resposnive  ^ */
 .popupBack{
@@ -634,8 +656,3 @@ input:-webkit-autofill:active  {
     position: relative;
     display: block;
 }
-
-
-/* body * {
-    border: dashed rgb(104, 97, 97) 1px;
-} */
