@@ -236,7 +236,8 @@ function CVdownloader(div,popup) {
 // DOWNLOADING BUTTON LOADING POPUP 
 
 function POPUPS() {
-    const text = document.querySelectorAll(".topic>p");
+    // const text = document.querySelectorAll(".topic>p");
+    const text = document.querySelectorAll(".topicInfo");
     const topic = document.getElementsByClassName("topic");
     let firstClick = true;
     document.addEventListener("click",function(event) {
@@ -282,7 +283,7 @@ function POPUPS() {
     }
     for(let i=0;i<topic.length;i++) {
     topic[i].addEventListener("click",function() {
-            topic[i].children[1].children[0].innerText = text[i].innerText;
+            topic[i].children[1].children[0].innerHTML = text[i].innerHTML;
             topic[i].children[1].style.display = "flex";
         });
     }

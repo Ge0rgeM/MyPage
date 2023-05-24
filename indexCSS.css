@@ -431,7 +431,7 @@ input:-webkit-autofill:active  {
     font-weight: bold;
     margin-bottom: 10px;
 }
-.topic p {
+.topicInfo {
     font-size: 16px;
     line-height: 1.5;
     color: #666;
@@ -509,7 +509,7 @@ input:-webkit-autofill:active  {
     .topic h3{
         margin-bottom: 0px;
     }
-    .topic>p{
+    .topicInfo{
         display: none;
     }
     .first{
@@ -560,7 +560,7 @@ input:-webkit-autofill:active  {
     
 }
 body * {
-    /* border: dashed rgb(104, 97, 97) 1px; */
+    border: dashed rgb(104, 97, 97) 1px;
 }
 /* Resposnive  ^ */
 .popupBack{
@@ -588,6 +588,8 @@ body * {
     position: absolute;
 }
 .description-popup>*{
+    font-size: 16px;
+    line-height: 1.5;
     opacity: 0;
     animation-delay: 1.3s;
     animation: popup-text 1s ease-in;
