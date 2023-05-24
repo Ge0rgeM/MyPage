@@ -17,7 +17,9 @@ html{
     background-color: #555;
 }
 .navDiv{
-    width: 95%;
+    top: 0;
+    left: 0;
+    width: 100%;
     margin: auto;
     height: fit-content;
     position: fixed;
@@ -31,7 +33,7 @@ html{
 }
 nav{
     display: flex;
-    width: 85%;
+    width: 80%;
     margin: auto;
     align-items: center;
     justify-content: space-between;
@@ -213,6 +215,10 @@ img[src="./GM.png"]{
 #contact{
     margin-top: 200px;
 }
+.ContactText{
+    padding-bottom: 150px;
+    opacity: 0 !important;
+}
 .formCon{
     width: 55%;
     margin: 0 auto;
@@ -296,6 +302,9 @@ img[src="./GM.png"]{
     text-decoration: none;
     color:white;
 }
+.gmailInfo p,.locInfo p,.CVInfo a,.telInfo p{
+    font-size: 1vw;
+}
 .gmailInfo p,.locInfo p{
     cursor: pointer;
 }
@@ -316,8 +325,8 @@ img[src="./GM.png"]{
     z-index: 9999;
 }
 .icon{
-    width: 50px;
-    height: 50px;
+    width: 3vw;
+    height: 3vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -333,7 +342,7 @@ input:-webkit-autofill:active  {
   -webkit-text-fill-color: white !important;
 } 
 .icon span{
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 .form-group button {
     color: white;
@@ -430,6 +439,8 @@ input:-webkit-autofill:active  {
 /* Resposnive  v*/
 @media only screen and (max-width: 750px){
     #navFirstDiv{
+        width: 95%;
+        margin: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -486,7 +497,7 @@ input:-webkit-autofill:active  {
         font-size: 10px;
     }
     .frontTextIntro,.aboutDiv,.portfolioDiv{
-        padding-top: 110px;
+        padding-top: 60px;
     }
     .topic{
         cursor: pointer;
@@ -529,14 +540,27 @@ input:-webkit-autofill:active  {
         margin: auto;
         width: 90%;
         height: fit-content;
-        border-radius: 0 0 10px 10px;  
+        border-radius: 0 0 10px 10px;
         color: white !important;
         background: #1c1e25;
     }
-    /* body * {
-        border: dashed rgb(104, 97, 97) 1px;
-    } */
-
+    .ContactText{
+        padding: 0px;
+    }
+    .gmailInfo p,.locInfo p,.CVInfo a,.telInfo p{
+        font-size: 3vw;
+    }
+    .icon{
+        width: 10vw !important;
+        height: 10vw !important;
+    }
+    .icon span{
+        font-size: 5vw !important;
+    }
+    
+}
+body * {
+    /* border: dashed rgb(104, 97, 97) 1px; */
 }
 /* Resposnive  ^ */
 .popupBack{
