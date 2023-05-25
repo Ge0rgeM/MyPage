@@ -431,7 +431,14 @@ input:-webkit-autofill:active  {
     font-weight: bold;
     margin-bottom: 10px;
 }
+.topicInfo ul li{
+    padding-left: 15px;
+}
 .topicInfo {
+    width: 90%;
+    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
     font-size: 16px;
     line-height: 1.5;
     color: #666;
@@ -560,7 +567,7 @@ input:-webkit-autofill:active  {
     
 }
 body * {
-    border: dashed rgb(104, 97, 97) 1px;
+    /* border: dashed rgb(104, 97, 97) 1px; */
 }
 /* Resposnive  ^ */
 .popupBack{
@@ -572,23 +579,34 @@ body * {
     backdrop-filter: blur(2px);
     display: none;
     z-index: 10000;
+    position: absolute;
     justify-content: center;
     align-items: center;
 }
 .description-popup {
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
     animation: slide-in 0.7s ease-in;
     backdrop-filter: blur(3px);
     animation-fill-mode: forwards;
     opacity: 0;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
     position: absolute;
 }
-.description-popup>*{
-    font-size: 16px;
+.description-popup ul{
+    width: 200px;
+}
+.description-popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.description-popup ul li{
+    text-align: left;
+    padding-left: 15px;
+    font-size: 120%;
     line-height: 1.5;
     opacity: 0;
     animation-delay: 1.3s;
@@ -645,15 +663,11 @@ body * {
 }
 @keyframes slide-in {
     40% {
-        width: 200px;
-        height: 200px;
         border: 2px solid black;
         opacity: 1;
     }
     100% {
         border: 2px solid black;
-        width: 300px;
-        height: 200px;
         opacity: 1;
     }
 }
