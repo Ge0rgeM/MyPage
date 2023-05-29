@@ -579,7 +579,6 @@ body * {
     backdrop-filter: blur(2px);
     display: none;
     z-index: 10000;
-    position: absolute;
     justify-content: center;
     align-items: center;
 }

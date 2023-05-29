@@ -239,11 +239,12 @@ function POPUPS() {
     // const text = document.querySelectorAll(".topic>p");
     const text = document.querySelectorAll(".topicInfo");
     const topic = document.getElementsByClassName("topic");
+    const topicList = document.getElementsByClassName("topicList");
     let firstClick = true;
     document.addEventListener("click",function(event) {
         const popupWin = document.getElementsByClassName("description-popup");
         let openWin = checkPopup(); // Index of opened popup
-        if(openWin==-1)
+        if(openWin===-1)
             return;
         if(firstClick){
             firstClick=false;
@@ -277,14 +278,23 @@ function POPUPS() {
         for(let i=0;i<popupBack.length;i++) {
             const style = getComputedStyle(popupBack[i]);
             if(style.display=='flex')
-            return i; // RETURN INDEX OF OPENED POPUP
+                return i; // RETURN INDEX OF OPENED POPUP
         }
         return -1;
     }
+    function openWinCheck(index) {
+        const popupBack = document.getElementsByClassName("popupBack");
+        const style = getComputedStyle(popupBack[index]);
+            if(style.display=='flex')
+                return true;
+        return false;        
+    }
     for(let i=0;i<topic.length;i++) {
-    topic[i].addEventListener("click",function() {
-            topic[i].children[1].children[0].innerHTML = text[i].innerHTML;
-            topic[i].children[1].style.display = "flex";
+        topic[i].addEventListener("click",function() {
+            if(!openWinCheck(i)){ // If not opened than open popup (to prevent opening already opened one)
+                topic[i].children[1].children[0].innerHTML = text[i].innerHTML;
+                topic[i].children[1].style.display = "flex";
+            }
         });
     }
 }
