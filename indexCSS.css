@@ -429,7 +429,6 @@ input:-webkit-autofill:active  {
 .topic h3 {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 .topicInfo ul li{
     padding-left: 15px;
@@ -495,16 +494,23 @@ input:-webkit-autofill:active  {
         width: 20%;
     }
     .portfolioText,.formHead,.about-section h2{
-        font-size: 24px !important;
+        font-size: 30px !important;
     }
     .intro h1{
-        font-size: 15px;
+        font-size: 20px;
+    }
+    .littleDesc{
+        font-size: 2vw;
     }
     .intro a{
         font-size: 10px;
     }
+    .myPhotoDiv,.shapeDiv {
+        width: 30vw;
+        height: 30vw;
+    } 
     .frontTextIntro,.aboutDiv,.portfolioDiv{
-        padding-top: 60px;
+        padding-top: 80px;
     }
     .topic{
         cursor: pointer;
@@ -512,9 +518,10 @@ input:-webkit-autofill:active  {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 20px;
     }
-    .topic h3{
-        margin-bottom: 0px;
+    .topic h3{   
+        font-size: 20px;
     }
     .topicInfo{
         display: none;
