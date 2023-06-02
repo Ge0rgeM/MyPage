@@ -54,6 +54,7 @@ const resize_navButtons = new ResizeObserver(function(entries) {
     divFont[i].style.fontSize = (width/4*10)/100+"px";
 });
 resize_navButtons.observe(document.getElementsByClassName("buttons")[0]);
+
 const resize_ob = new ResizeObserver(function(entries) {
     // since we are observing only a single element, so we access the first element in entries array
     let rect = entries[0].contentRect;
@@ -67,6 +68,17 @@ const resize_ob = new ResizeObserver(function(entries) {
     // console.log(divFont);
 });
 //MAKE NAV BUTTONS RESPOSNIVE
+
+//Manual Padding for nav and Home
+window.addEventListener("resize",paddingRes);
+paddingRes();
+function paddingRes() {
+    let navH = document.getElementsByClassName("navDiv")[0].offsetHeight;
+    let homeEl = document.getElementById("home");
+    homeEl.style.paddingTop=navH+'px';
+}
+//Manual Padding for nav and Home
+
 
 // form left and right side resizer
 function res() {
@@ -234,12 +246,10 @@ function CVdownloader(div,popup) {
     });
 }
 // DOWNLOADING BUTTON LOADING POPUP 
-
 function POPUPS() {
     // const text = document.querySelectorAll(".topic>p");
     const text = document.querySelectorAll(".topicInfo");
     const topic = document.getElementsByClassName("topic");
-    const topicList = document.getElementsByClassName("topicList");
     let firstClick = true;
     document.addEventListener("click",function(event) {
         const popupWin = document.getElementsByClassName("description-popup");

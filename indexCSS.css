@@ -416,10 +416,10 @@ input:-webkit-autofill:active  {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 50px;
 }
 .topic {
-    flex: 35%;
-    margin: 30px;
+    flex: 40%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -518,7 +518,7 @@ input:-webkit-autofill:active  {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 20px;
+        /* margin: 20px; */
     }
     .topic h3{   
         font-size: 20px;
