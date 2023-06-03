@@ -97,6 +97,7 @@ target.push(...document.getElementsByClassName("portfolioDiv")[0].children[1].ch
 // target.push(document.querySelectorAll(".formDiv>form")[0]);
 target.push(document.querySelectorAll(".about-section h2")[0]);
 target.push(...document.getElementsByClassName("topics")[0].children);
+target.push(document.getElementsByClassName("formCon")[0]);
 function checkViewport() {
     target.forEach(item => {
         const itemPosition = item.getBoundingClientRect();

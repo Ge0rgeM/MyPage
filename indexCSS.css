@@ -206,7 +206,7 @@ img[src="./GM.png"]{
 }
 /* For SMOOTH scrolling */
 .frontTextIntro,.sectorName,#portfolioDivs>div,
-.formDiv>form,.about-section *{
+.formDiv>form,.about-section *,.formCon{
     transition: opacity 1s ease, transform 1.5s ease;
 }
 /* For SMOOTH scrolling */
