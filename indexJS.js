@@ -75,7 +75,7 @@ paddingRes();
 function paddingRes() {
     let navH = document.getElementsByClassName("navDiv")[0].offsetHeight;
     let homeEl = document.getElementById("home");
-    homeEl.style.paddingTop=navH+'px';
+    homeEl.style.paddingTop=navH + 20 +'px';
 }
 //Manual Padding for nav and Home
 
@@ -212,6 +212,20 @@ emailText.addEventListener('click', function() {
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("open");
 });
+let firstClickSideMenu = true;
+document.addEventListener("click",function(event) {
+    if(menuBtn.classList.contains("open")){
+        if(firstClickSideMenu){
+            firstClickSideMenu=false;
+            return;
+        }
+        const menuDiv = document.getElementsByClassName("menu")[0];
+        if(!menuDiv.contains(event.target)){
+            menuBtn.classList.toggle("open");
+            firstClickSideMenu=true;
+        }
+    }
+});
 // SIDE MENU OPEN/CLOSE TOGGLE
 
 // TO MOVE PHOTO ON HOVER
@@ -329,4 +343,4 @@ function textToCopy(textDoc) {
         });
     });
 }
-// COPY ON CLICK
+// COPY ON CLICK    
