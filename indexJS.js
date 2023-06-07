@@ -343,4 +343,24 @@ function textToCopy(textDoc) {
         });
     });
 }
-// COPY ON CLICK    
+// COPY ON CLICK
+
+// LOADING 
+window.addEventListener('load', function() {
+
+});
+window.addEventListener('beforeunload', function() {
+
+});
+// LOADING
+
+//LOADING LETTERS DELAY
+delayLoadingLetters();
+function delayLoadingLetters() {
+    let letters = document.getElementsByClassName("letter");
+    for(let i=0;i<letters.length;i++){
+        letters[i].style.animationDelay = 0.12*(i+1) + 's';
+    }
+}
+//LOADING LETTERS DELAY
+
