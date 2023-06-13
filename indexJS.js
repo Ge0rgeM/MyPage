@@ -17,6 +17,7 @@ let me = document.getElementsByClassName("myPhotoDiv")[0];
 const myImage = document.getElementById('myImage');
 const myImage1 = document.getElementById('myImage1');
 const scrollToElement = document.getElementById('home');
+let ignoreBeforeUnload = false; // Default 
 // GLOBAL
 
 // USING FUNCTIONS 
@@ -205,6 +206,8 @@ function openMap() {
 // Clickable Gmail
 emailText.addEventListener('click', function() {
   window.location.href = 'mailto:G_Modebadze3@cu.edu.ge';
+  const loading = document.getElementsByClassName("loadBackground")[0];
+  loading.style.display = "none";
 });
 // Clickable Gmail
 
@@ -257,6 +260,8 @@ function CVdownloader(div,popup) {
         // simulate download with setTimeout
         setTimeout(() => {
             popup.style.display = 'none';
+            const loading = document.getElementsByClassName("loadBackground")[0];
+            loading.style.display = "none";
         }, 1000);
     });
 }
@@ -347,10 +352,12 @@ function textToCopy(textDoc) {
 
 // LOADING 
 window.addEventListener('load', function() {
-
+    const loading = document.getElementsByClassName("loadBackground")[0];
+    loading.style.display = "none";
 });
 window.addEventListener('beforeunload', function() {
-
+    const loading = document.getElementsByClassName("loadBackground")[0];
+    loading.style.display = "flex";
 });
 // LOADING
 
@@ -363,4 +370,3 @@ function delayLoadingLetters() {
     }
 }
 //LOADING LETTERS DELAY
-
