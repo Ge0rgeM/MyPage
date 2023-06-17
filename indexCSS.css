@@ -205,7 +205,7 @@ img[src="./GM.png"]{
     width: 100%;
 }
 /* For SMOOTH scrolling */
-.frontTextIntro,.sectorName,#portfolioDivs>div,
+#home,.frontTextIntro,.sectorName,#portfolioDivs>div,
 .formDiv>form,.about-section *,.formCon{
     transition: opacity 1s ease, transform 1.5s ease;
 }
@@ -397,7 +397,7 @@ input:-webkit-autofill:active  {
     background-color: #eee;
 }
 .menu-btn.open ~ .menu {
-    right: 0;
+    right: 0 !important;
 }
 .aboutDiv{
     margin-top: 70px;

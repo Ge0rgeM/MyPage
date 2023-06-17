@@ -22,6 +22,8 @@ let ignoreBeforeUnload = false; // Default
 
 // USING FUNCTIONS 
 projectClick();
+sideMenuWidth();
+paddingRes();
 textToCopy(document.getElementById('toCopy'));
 CVdownloader(document.getElementById('download-btn'),document.getElementById('loading-popup'));
 CVdownloader(document.getElementById('download-ContactBtn'),document.getElementById('loading-ContactPopup'));
@@ -72,7 +74,6 @@ const resize_ob = new ResizeObserver(function(entries) {
 
 //Manual Padding for nav and Home
 window.addEventListener("resize",paddingRes);
-paddingRes();
 function paddingRes() {
     let navH = document.getElementsByClassName("navDiv")[0].offsetHeight;
     let homeEl = document.getElementById("home");
@@ -93,6 +94,7 @@ function res() {
 // form left and right side resizer
  
 // FOR SMOOTH SCROLLING 
+target.push(document.getElementById("home"));
 target.push(document.getElementsByClassName("portfolioDiv")[0].children[0]);
 target.push(...document.getElementsByClassName("portfolioDiv")[0].children[1].children);
 // target.push(document.querySelectorAll(".formDiv>form")[0]);
@@ -210,6 +212,17 @@ emailText.addEventListener('click', function() {
   loading.style.display = "none";
 });
 // Clickable Gmail
+
+// SIDE MENU MANUAL WIDTH
+window.addEventListener("resize",sideMenuWidth);
+function sideMenuWidth() {
+    let screenW = window.innerWidth;
+    let menuDiv = document.getElementsByClassName("menu")[0];
+    menuDiv.style.right = -1*(screenW/2) + "px";
+    menuDiv.style.width = screenW/2 + "px";
+
+}
+// SIDE MENU MANUAL WIDTH
 
 // SIDE MENU OPEN/CLOSE TOGGLE
 menuBtn.addEventListener("click", () => {
