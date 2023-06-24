@@ -368,25 +368,6 @@ window.addEventListener('load', function() {
     const loading = document.getElementsByClassName("loadBackground")[0];
     loading.style.display = "none";
 });
-window.addEventListener('load', function() {
-    // Get all the images on the page
-    let images = document.getElementsByTagName('img');
-    let totalImages = images.length;
-    let loadedImages = 0;
-    // Show the loading animation
-    const loading = document.getElementsByClassName("loadBackground")[0];
-    loading.style.display = 'flex';
-    // Function to update the loaded image count and hide the loading animation when all images are loaded
-    function checkAllImagesLoaded() {
-      loadedImages++;
-      if (loadedImages === totalImages)
-        loadingContainer.style.display = 'none';
-    }
-    // Loop through each image and listen for the 'load' event
-    for (let i = 0; i < totalImages; i++)
-      images[i].addEventListener('load', checkAllImagesLoaded);
-});
-  
 window.addEventListener('beforeunload', function() {
     const loading = document.getElementsByClassName("loadBackground")[0];
     loading.style.display = "flex";

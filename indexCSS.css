@@ -586,9 +586,9 @@ input:-webkit-autofill:active  {
     }
     
 }
-body * {
-    /* border: dashed rgb(104, 97, 97) 1px; */
-}
+/* body * {
+    border: dashed rgb(104, 97, 97) 1px;
+} */
 /* Resposnive  ^ */
 .popupBack{
     position: fixed;
