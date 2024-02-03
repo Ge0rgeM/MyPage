@@ -122,7 +122,7 @@ const projectLinks={};
 projectLinks["TicTacToe"]="https://ge0rgem.github.io/TicTacToe/";
 projectLinks["ToDoList"]="https://ge0rgem.github.io/ToDoList/";
 projectLinks["StopWatch"]="https://ge0rgem.github.io/Stopwatch/";
-projectLinks["TBCAcademyClone"]="https://ge0rgem.github.io/TBCAcademyClone/";
+projectLinks["TBCAcademyClone"]="https://github.com/Ge0rgeM/TBC/";
 projectLinks["ComingSoon"]="#";
 function projectClick() {
     let projects = document.getElementById("portfolioDivs").children;
